@@ -20,10 +20,10 @@ rn_training_data = [
 
 nn = NeuralNet(6, 1, 1)
 nn.train(rn_training_data)
-
-print(nn.get_ih_weights())
 print()
+print(nn.get_ih_weights())
 print(nn.get_ho_weights())
+print()
 
 print(nn.evaluate([1, 1, 1, 1, 1, 1]))
 print(nn.evaluate([0, 0, 0, 0, 0, 0]))
