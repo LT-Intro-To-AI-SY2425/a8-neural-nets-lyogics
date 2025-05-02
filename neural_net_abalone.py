@@ -25,8 +25,5 @@ test_data = [
     ]
 # intended output is number of rings
 
-nn = NeuralNet(8, 0, 1)
-nn.train(training_data, iters=10000, print_interval=1000, learning_rate=1.0)
-nn.evaluate([0.2, 0.123, 0.941, 0.322, 0.632, 0.101, 0.021, 0.91])
-for i in nn.test_with_expected(test_data):
+for i in abann.test_with_expected(test_data):
     print(f"desired: {i[1]}, actual: {i[2]}")   
