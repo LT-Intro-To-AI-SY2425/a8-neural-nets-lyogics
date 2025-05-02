@@ -10,6 +10,7 @@ abann = NeuralNet(8, 0, 1)
 abann.train(training_data, learning_rate=0.7, iters=10000, print_interval=1000)
 
 # F = 0.1, M = 0.3, I = 0.2
+# features from left to right: sex, length, diameter, whole height, whole weight, weight of meat, gut weight after bleeding, shell weight after drying 
 test_data = [
     ([0.2, 0.123, 0.941, 0.322, 0.632, 0.101, 0.021, 0.91], [20]),
     ([0.3, 0.32, 0.18, 0.291, 0.234, 0.41, 0.01, 0.72], [8]),
@@ -22,10 +23,10 @@ test_data = [
     ([0.2, 0.34, 0.22, 0.212, 0.89, 0.195, 0.745, 0.732], [7]),
     ([0.1, 0.75, 0.31, 0.875, 0.13, 0.839, 0.987, 0.42], [13])
     ]
-
+# intended output is number of rings
 
 nn = NeuralNet(8, 0, 1)
-nn.train(training_data, iters=10000, print_interval=1000, learning_rate=0.5)
+nn.train(training_data, iters=10000, print_interval=1000, learning_rate=1.0)
 nn.evaluate([0.2, 0.123, 0.941, 0.322, 0.632, 0.101, 0.021, 0.91])
 for i in nn.test_with_expected(test_data):
     print(f"desired: {i[1]}, actual: {i[2]}")   
